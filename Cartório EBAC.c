@@ -148,60 +148,76 @@ int deletar()
 
 int main()
     {
+    setlocale(LC_ALL, "Portuguese");
 	int opcao=0; //Definindo variáveis
 	int laco=1;
+	char senhadigitada[10]="a";
+	int comparacao;
 	
-	for(laco=1;laco=1;)
-    {
+	printf("### Cartório da EBAC###\n\n");
+	printf("Login de administrador!\n\n");
+	printf("Digite a sua senha:");
+	scanf("%s", senhadigitada);
+	system("cls");
 	
-	    system("cls"); //limpar a tela
+	comparacao = strcmp(senhadigitada, "admin");
 	
-
-        setlocale(LC_ALL, "Portuguese"); //Definindo a linguagem
+	if(comparacao == 0)
+	{
 	
-	    printf("###Cartório dos alunos da EBAC###\n\n"); //inicio do menu
-	    printf("Escolha a opção desejada no menu abaixo:\n\n");
-	    printf("\t1 - Registrar nomes\n\n");
-	    printf("\t2 - Consultar nomes\n\n");
-	    printf("\t3 - Deletar nomes\n\n"); 
-	    printf("\t4 - Sair do sistema\n\n");
-        printf("Opção:");
-     
-        scanf("%d", &opcao); //armazenando a escolha do usuário
-    
-        system("cls"); //limpar a tela
-        
-        
-        switch(opcao) //inicio da seleção do menu
+	
+	    for(laco=1;laco=1;)
         {
-        	case 1:
-        	registro(); //chamada de funções
-			break; //sempre botar para acabar uma função
-			
-			case 2:
-			consulta();
-			break;
-			
-			case 3:
-			deletar();
-			break;
-			
-			case 4:
-			printf("Obrigado por utilizar o sistema, volte sempre!\n");
-			return 0;
-			break;
-			
-			default:
-			printf("Essa opção não existe!\n"); //para alguma opção que não existe aparecera isso
-			system("pause"); //pausar o sistema para poder ler
-			break;
 	
-            //fim da seleção do menu
-	        
-    	}
-		         
+	         system("cls"); //limpar a tela
+	
 
+             setlocale(LC_ALL, "Portuguese"); //Definindo a linguagem
+	
+	         printf("###Cartório dos alunos da EBAC###\n\n"); //inicio do menu
+	        printf("Escolha a opção desejada no menu abaixo:\n\n");
+	         printf("\t1 - Registrar nomes\n\n");
+	        printf("\t2 - Consultar nomes\n\n");
+	        printf("\t3 - Deletar nomes\n\n"); 
+	        printf("\t4 - Sair do sistema\n\n");
+            printf("Opção:");
+     
+            scanf("%d", &opcao); //armazenando a escolha do usuário
+    
+            system("cls"); //limpar a tela
+        
+        
+            switch(opcao) //inicio da seleção do menu
+            {
+            	case 1:
+            	registro(); //chamada de funções
+		    	break; //sempre botar para acabar uma função
+			
+		    	case 2:
+		    	consulta();
+		    	break;
+			
+		    	case 3:
+		    	deletar();
+		    	break;
+			
+		    	case 4:
+		    	printf("Obrigado por utilizar o sistema, volte sempre!\n");
+		    	return 0;
+		    	break;
+			
+		    	default:
+			    printf("Essa opção não existe!\n"); //para alguma opção que não existe aparecera isso
+		     	system("pause"); //pausar o sistema para poder ler
+		    	break;
+           }
+            //fim da seleção do menu
+        }
     }
+    
+    else
+        printf("Senha incorreta!");
+
+ }
 	
     
-}
